@@ -1,38 +1,16 @@
+#Random answers to question
 import random
-name = ""
-question = ""
-answer = ""
-#Generates a random number for Magic Ball answer
-random_number = random.randint(1,9)
-if random_number == 1:
-  answer = "Yes - definitely."
-elif random_number == 2:
-  answer = "It is decidedly so."
-elif random_number == 3:
-  answer = "Without a doubt."
-elif random_number == 4:
-  answer = "Reply hazy, try again."
-elif random_number == 5:
-  answer = "Ask again later."
-elif random_number == 6:
-  answer = "Better not tell you now."
-elif random_number == 7:
-  answer = "My sources say no."
-elif random_number == 8:
-  answer = "Outlook not so good."
-elif random_number == 9:
-  answer = "Very doubtful."
+answer = ["Yes - definitely", "It is decidedly so", "Without a doubt", "Reply hazy, try again", "Ask again later", "Better not tell you now", "My sources say no", "Outlook not so good", "Very doubtful"]
+#Asks the user to enter their name and question.
+name = input("Enter your name: ")
+question = input("Enter your question: ")
+#Changes the script based on whether or not the user inserts a name or question.
+if not question:
+    print("No question asked!")
 else:
-  answer = "Error"
-#Gives a Magic Ball answer based on name
-if name == "":
-  print("Question: " + question)
+    if not name:
+        print(f"The question is: {question}")
+        print(f"Magic 8-Ball's answer: {random.choice(answer)}")
 else:
-  print(name + " asks: " + question)
-print("Magic 8-Ball's answer: " + answer)
-
-if question == "":
-  print("Ask the Magic 8-Ball anything!")
-else:
-  print(name + " asks: " + question)
-  print("Magic 8-Ball's answer: " + answer)
+  print(f"{name} asks: {question}")
+  print(f"Magic 8-Ball's answer: {random.choice(answer)}")
